@@ -110,13 +110,13 @@ public class dbform extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          String name = tf1.getText();
+          
             DefaultTableModel model = (DefaultTableModel) p1.getModel();
         try {
             Class.forName("java.sql.Driver");
             Connection conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","123");
             Statement st = (Statement) conn.createStatement();
-            String sql = "Select rollno from Hitesh where nmae='"+name+"'";
+            String sql = "Select * from Hitesh ";
            
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
